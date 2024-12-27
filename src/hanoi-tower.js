@@ -17,7 +17,11 @@ const { NotImplementedError } = require('../extensions/index.js');
 function calculateHanoi(disksNumber, turnsSpeed) {
   let minMoves = 2 ** disksNumber - 1;
   let seconds = Math.floor(minMoves / (turnsSpeed / 3600));
-  console.log(`minMoves: ${minMoves} seconds: ${seconds}`);
+
+  let obj = {};
+  obj.turns = minMoves;
+  obj.seconds = seconds;
+  return obj;
 }
 
 module.exports = {
