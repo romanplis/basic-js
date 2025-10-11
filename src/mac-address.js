@@ -14,9 +14,20 @@ const { NotImplementedError } = require('../lib');
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-function isMAC48Address(/* n */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+function isMAC48Address(n) {
+  let arr = n.split('-');
+  console.log(arr);
+  if (arr.length !== 6) {
+      return false;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+      let num = parseInt(arr[i], 16);
+      if (num < 0 || num > 255 || isNaN(num)) {
+          return false;
+      }
+  }
+  return true;
 }
 
 module.exports = {
