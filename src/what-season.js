@@ -17,7 +17,7 @@ function getSeason(date) {
   }
 
   if (!(date instanceof Date) || isNaN(date)) {
-    throw new Error("Invalid date");
+    throw new Error("Invalid date!");
   }
 
   const month = date.getMonth();
